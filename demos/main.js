@@ -1,21 +1,27 @@
 const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
 
-const person = { first: "Joe", last: "Doe" };
+const renderElement = () => {
+  const element = (
+    <div className="post">
+      <h1>My First Blog Post</h1>
+      <div>Author: Mark Twain</div>
+      <div>Published: {new Date().toLocaleTimeString()}</div>
+      <p>
+        I am new to blogging and this is my first post. You should expect a lot
+        of great things from me.
+      </p>
+    </div>
+  );
 
-const logo = {
-  name: "React Logo",
-  title: "React Logo",
-  path: "/assets/react-logo.png",
+  root.render(element);
 };
 
-const element = (
-  <>
-    <div className="container">
-      Hello {person.first} {person.last}
-    </div>
-    <img src={logo.path} alt={logo.name} title={logo.title} />
-    <div className="alert alert-danger">error message</div>
-  </>
-);
+setInterval(renderElement, 1000);
 
-ReactDOM.createRoot(rootElement).render(element);
+/*
+NOTE: React Virtual DOM takes its current version and compares it to its new version every second
+It finds the diff and creates a patch stream based on it to be applied on the real DOM
+This patch is then applied on the real DOM to take it from its current version to the new version
+A current version of the virtual DOM is then created for the next update.
+*/
