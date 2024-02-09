@@ -1,18 +1,21 @@
 const rootElement = document.getElementById("root");
 
-// const element = document.createElement("div");
-// element.textContent = "Hello World";
-// element.className = "container";
-// rootElement.appendChild(element);
-/*
-const element = React.createElement(
-  "div",
-  {
-    className: "container",
-  }
-  // "Hello World"
-);*/
+const person = { first: "Joe", last: "Doe" };
 
-const element = <div className="container">Hello World</div>;
-console.log(element);
+const logo = {
+  name: "React Logo",
+  title: "React Logo",
+  path: "/assets/react-logo.png",
+};
+
+const element = (
+  <>
+    <div className="container">
+      Hello {person.first} {person.last}
+    </div>
+    <img src={logo.path} alt={logo.name} title={logo.title} />
+    <div className="alert alert-danger">error message</div>
+  </>
+);
+
 ReactDOM.createRoot(rootElement).render(element);
