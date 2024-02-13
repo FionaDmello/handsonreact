@@ -1,10 +1,15 @@
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
-function HelloWorld() {
-  return (
-    <div className="container">Hello World! This is a functional component</div>
-  );
+class HelloWorld extends React.Component {
+  render() {
+    /* Rewrite the render function on the class to describe what you want to display on the UI */
+    return (
+      <div className="container">
+        Hello World! This is a functional component
+      </div>
+    );
+  }
 }
 
 function App() {
