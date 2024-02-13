@@ -7,6 +7,19 @@ function HelloWorld() {
   );
 }
 
-root.render(<HelloWorld />);
+function App() {
+  return (
+    <>
+      <HelloWorld />
+      <HelloWorld />
+      <HelloWorld />
+      <HelloWorld />
+    </>
+  );
+}
 
-/* NOTE: React component are always supposed to be PascalCased */
+root.render(<App />);
+
+/* NOTE: React component are always supposed to be PascalCased. 
+  The Babel  compiler uses the PascalCase used to differentiate between 
+  React components and regular HTML elements */
